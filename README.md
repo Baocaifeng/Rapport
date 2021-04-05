@@ -62,3 +62,25 @@ java -version
 > - OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode) 
 > - Attention ! jdk is not installed, there is no javac
 
+### demo
+> - In Demo.scala
+```scala
+import scala.io.StdIn.readLine
+
+object Demo extends App {
+
+    print("Enter your first name: ")
+    val firstName = readLine()
+
+    print("Enter your last name: ")
+    val lastName = readLine()
+
+    println(s"Your name is $firstName $lastName")
+
+}
+```
+
+> In container
+```
+scalac Demo.scala
+scala Demo
