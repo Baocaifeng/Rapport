@@ -29,35 +29,38 @@ docker pull baocaifeng/scala-jre8-alpine:1.0
 3. Build image 
 > You can also dowload Dockerfile from github and build it by yourself. 
 > To build, you need to specify the desired openjdk and scala versions via `--build-arg` parameters.
+> By default, OPENJDK_TAG=8u151-jre-alpine, SCALA_VERSION=2.13.5
 ```
 docker build --build-arg OPENJDK_TAG=<Your Openjdk Tag> --build-arg SCALA_VERSION=<Your Scala version> .
-# By default, OPENJDK_TAG=8u151-jre-alpine, SCALA_VERSION=2.13.5
 ```
 
 4. Create container
+> Mount host directory to container
 ```
-# Mount host directory to container
 mkdir <Your directory>
 docker container run -it -d --rm -v $PWD/<Your directory>:/mnt/code --name <Container name> baocaifeng/scala-jre8-alpine:1.0
 docker ps
-
-# Work in container just like in linux as usual
+```
+> Work in container just like in linux as usual
+```
 docker container exec -it autocomplete "/bin/sh"
 ```
 
 5. Check version
+> git version 2.15.4 
+> Scala code runner version 2.13.5 -- Copyright 2002-2020, LAMP/EPFL and Lightbend, Inc.
+> Scala compiler version 2.13.5 -- Copyright 2002-2020, LAMP/EPFL and Lightbend, Inc.
+
+> openjdk version "1.8.0_151"
+> OpenJDK Runtime Environment (IcedTea 3.6.0) (Alpine 8.151.12-r0)
+> OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode) 
+
+> Attention ! jdk is not installed, there is no javac
 ```
 git --version
-# git version 2.15.4 
 scala -version
-# Scala code runner version 2.13.5 -- Copyright 2002-2020, LAMP/EPFL and Lightbend, Inc.
 scalac -version
-# Scala compiler version 2.13.5 -- Copyright 2002-2020, LAMP/EPFL and Lightbend, Inc.
-java -version
-# openjdk version "1.8.0_151"
-# OpenJDK Runtime Environment (IcedTea 3.6.0) (Alpine 8.151.12-r0)
-# OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode) 
 
-# Attention ! jdk is not installed, there is no javac
+java -version
 ```
 
