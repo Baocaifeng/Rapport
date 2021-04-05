@@ -20,10 +20,12 @@
 ### how to use
 
 1. Install Docker
+
 2. Pull the scala-jre8-alpine image from DockerHub
 ```
 docker pull baocaifeng/scala-jre8-alpine:1.0
 ```
+
 3. Build image 
 > You can also dowload Dockerfile from github and build it by yourself. 
 > To build, you need to specify the desired openjdk and scala versions via `--build-arg` parameters.
@@ -31,3 +33,22 @@ docker pull baocaifeng/scala-jre8-alpine:1.0
 docker build --build-arg OPENJDK_TAG=<Your Openjdk Tag> --build-arg SCALA_VERSION=<Your Scala version> .
 # by default, OPENJDK_TAG=8u151-jre-alpine, SCALA_VERSION=2.13.5
 ```
+
+4. Create container
+```
+# mount host directory to container
+mkdir <Your directory>
+docker container run -it -d --rm -v $PWD/<Your directory>:/mnt/code --name <Container name> baocaifeng/scala-jre8-alpine:1.0
+docker ps
+
+# work in container just like in linux as usual
+docker container exec -it autocomplete "/bin/sh"
+```
+
+5. Check version
+```
+git --version
+> git version 2.15.4 
+
+```
+
