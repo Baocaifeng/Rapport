@@ -1,0 +1,1 @@
+light-scala docker image
