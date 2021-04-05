@@ -21,4 +21,7 @@
 
 1. Install Docker
 2. Pull the scala-jre8-alpine image from DockerHub
+```
+docker pull baocaifeng/scala-jre8-alpine
+```
 3. Build image 
