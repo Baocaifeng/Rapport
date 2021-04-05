@@ -54,7 +54,9 @@ scala -version
 scalac -version
 # Scala compiler version 2.13.5 -- Copyright 2002-2020, LAMP/EPFL and Lightbend, Inc.
 java -version
-# OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode)
+# openjdk version "1.8.0_151"
+# OpenJDK Runtime Environment (IcedTea 3.6.0) (Alpine 8.151.12-r0)
+# OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode) 
 
 # Attention ! jdk is not installed, there is no javac
 ```
