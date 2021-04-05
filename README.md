@@ -80,7 +80,7 @@ object Demo extends App {
 }
 ```
 
-> In container
+> - In container
 ```
 scalac Demo.scala
 scala Demo
